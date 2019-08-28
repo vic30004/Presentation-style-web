@@ -3,7 +3,7 @@
     --page-2-color: tan;
     --page-3-color: teal;
     --page-4-color: slateblue;
-    --animate-speed: 1s;
+    --animate-speed: 1.5s;
 }
 
 body{
@@ -61,11 +61,84 @@ body{
     font-size: 1.1rem;
     box-shadow: -.3rem .3rem #333;
     position: relative;
+    transition: all 0.3s ease-in;
 }
 
-.btn:hover{
+.btn:hover,.btn-dark{
+    background: #333;
+    color: #fff;
     top:2px;
     box-shadow: -.2rem .2rem #333;
-
-
 }
+.btn-dark:hover{
+    background: #f4f4f4;
+    color: #333;
+}
+.btn:active{
+    top:4px;
+    box-shadow:none;
+}
+
+
+/* Page 1 */
+
+#page1 h1{
+    transform: translateY(-1200px);
+    animation: heading var(--animate-speed) forwards ease-in;
+}
+
+#page1 p{
+    transform: translateX(-18000px);
+    animation: heading2 var(--animate-speed) forwards ease-in 1.5s;
+}
+
+/* key frame */
+
+@keyframes heading {
+    to{
+       transform: translateY(0); 
+    }
+}
+
+@keyframes heading2 {
+    to{
+        transform: translateX(0);
+    }
+}
+    
+
+
+
+
+
+
+/* let tradeCode = (str) =>{
+    let upperCase = str.toUpperCase().split(" ");
+    let code= "";
+    if(upperCase.length>=3){
+        upperCase=upperCase.slice(0,2);
+        code="TRADE"+ upperCase.join(""); 
+        console.log(code)
+        console.log(code.length)
+        if(code.length>15){
+            console.log("*********")
+            console.log("Text is more than 15 characters, please change")
+            console.log("********")
+            return
+        }
+        else{
+            return
+        }
+       
+    }
+    else if(upperCase.length<=2){
+        code= "TRADE"+ upperCase.join("");
+        console.log(code)
+        if(code.length>15){
+        console.log("*********")
+        console.log(`Text is ${code.length} characters long, it needs to be less than 15 characters`)
+        console.log("********")
+        return
+        }
+    }
+} */
